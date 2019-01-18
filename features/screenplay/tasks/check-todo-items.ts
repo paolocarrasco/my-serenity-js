@@ -1,5 +1,5 @@
 import {PerformsTasks, See, step, Task} from 'serenity-js/protractor';
-import {hasSameContentAs} from '../../../custom-assertions/array-assertions';
+import {hasSameContentAs} from '../../../custom-assertions';
 import {TodoList} from '../targets/todo-list';
 
 export class CheckTodoItems implements Task {

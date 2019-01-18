@@ -1,10 +1,5 @@
-/******************************************************************************
- * seerene(tm) - A framework for analyzing and visualizing complex software systems.
- * Copyright (C) 2005 - 2018 for all source codes:
- * seerene(tm) GmbH, Potsdam, Germany
- ******************************************************************************/
-import {protractor} from 'protractor';
 import {Enter, PerformsTasks, step, Task} from 'serenity-js/protractor';
+import {Keys} from '../targets/keys';
 import {TodoList} from '../targets/todo-list';
 
 export class AddTodoItem implements Task {
@@ -20,7 +15,7 @@ export class AddTodoItem implements Task {
         return actor.attemptsTo(
             Enter.theValue(this.itemName)                   // enter the value of the item name
                 .into(TodoList.What_Needs_To_Be_Done)       // into a "What needs to be done" field
-                .thenHit(protractor.Key.ENTER),
+                .thenHit(Keys.ENTER),
         );
     }
 }
