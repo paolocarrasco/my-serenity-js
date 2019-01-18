@@ -1,8 +1,6 @@
-import {See} from 'serenity-js/protractor';
 import {listOf} from '../../spec/text';
-import {hasSameContentAs} from '../custom-assertions';
-import {TodoList} from '../screenplay/targets/todo-list';
 import {AddTodoItem} from '../screenplay/tasks/add-todo-item';
+import {CheckTodoItems} from '../screenplay/tasks/check-todo-items';
 import {Start} from '../screenplay/tasks/start';
 
 export = function todoUserSteps() {
@@ -21,6 +19,7 @@ export = function todoUserSteps() {
 
     this.Then(/^(?:his|her) todo list should contain (.+)$/, function(items: string) {
         return this.stage.theActorInTheSpotlight().attemptsTo(
-            See.if(TodoList.Items_Displayed, hasSameContentAs(listOf(items))));
+            CheckTodoItems.hasSameContentAs(listOf(items)),
+        );
     });
 };
