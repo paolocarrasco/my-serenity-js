@@ -1,7 +1,7 @@
-import { serenity } from 'serenity-js';
+import {serenity} from 'serenity-js';
 
-import { protractor } from 'protractor';
-import { Actor, BrowseTheWeb, Cast } from 'serenity-js/protractor';
+import {protractor} from 'protractor';
+import {Actor, BrowseTheWeb, Cast} from 'serenity-js/protractor';
 
 export = function() {
 

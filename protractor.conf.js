@@ -44,7 +44,7 @@ exports.config = {
                 'disable-infobars',
                 '--headless',
                 '--disable-gpu',
-                '--window-size=800,600'
+                '--window-size=1280,900'
                 // 'incognito',
                 // 'disable-extensions',
                 // 'show-fps-counter=true'
