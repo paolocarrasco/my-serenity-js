@@ -7,4 +7,6 @@ export class TodoList {
     static Items = Target.the('List of Items')
         .located(by.repeater('todo in todos'));
     static Items_Displayed: Question<PromiseLike<string[]>> = Text.ofAll(TodoList.Items);
+    static TotalItems = Target.the('Number of pending items')
+        .located(by.css('.todo-count'));
 }

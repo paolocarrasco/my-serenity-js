@@ -1,7 +1,8 @@
-import {listOf} from '../../spec/text';
-import {AddTodoItem} from '../screenplay/tasks/add-todo-item';
-import {CheckTodoItems} from '../screenplay/tasks/check-todo-items';
-import {Start} from '../screenplay/tasks/start';
+import {listOf} from '../../../spec/text';
+import {AddTodoItem} from '../../screenplay/tasks/add-todo-item';
+import {CheckTodoItems} from '../../screenplay/tasks/check-todo-items';
+import {CheckTotalTodoItems} from '../../screenplay/tasks/check-total-todo-items';
+import {Start} from '../../screenplay/tasks/start';
 
 export = function todoUserSteps() {
 
@@ -20,6 +21,12 @@ export = function todoUserSteps() {
     this.Then(/^(?:his|her) todo list should contain (.+)$/, function(items: string) {
         return this.stage.theActorInTheSpotlight().attemptsTo(
             CheckTodoItems.hasSameContentAs(listOf(items)),
+        );
+    });
+
+    this.Then(/^I can see that I have (\d+) total items$/, function(quantity: string) {
+        return this.stage.theActorInTheSpotlight().attemptsTo(
+            CheckTotalTodoItems.is(quantity),
         );
     });
 };

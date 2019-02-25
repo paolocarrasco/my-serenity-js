@@ -7,5 +7,6 @@ Feature: Add new items to the todo list
   Scenario: Adding an item to a list with other items
 
     Given that James has a TODO list containing Buy some cookies, Walk the dog
-     When he adds Buy some cereal to his list
-     Then his todo list should contain Buy some cookies, Walk the dog, Buy some cereal
+    When he adds Buy some cereal to his list
+    Then his todo list should contain Buy some cookies, Walk the dog, Buy some cereal
+    And I can see that I have 3 total items
